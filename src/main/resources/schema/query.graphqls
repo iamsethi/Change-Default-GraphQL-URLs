@@ -1,10 +1,4 @@
 type Query {
-	firstQuery : String
-	secondQuery : String
-	fullName(sampleRequest : SampleRequest) : String
-}
-
-input SampleRequest {
-	firstName : String!
-	lastName : String
+	firstName : String
+	fullName(firstName : String, lastName : String) : String
 }
