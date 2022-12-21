@@ -1,17 +1,21 @@
 package com.example.query;
 
 import org.springframework.stereotype.Component;
-
+import com.example.response.EmployeeResponse;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 
 @Component
 public class Query implements GraphQLQueryResolver {
 
-	public String getFirstName () {
-		return "Ketan";
-	}
+    public Integer orgId() {
+        return 18892798;
+    }
+
+    public String orgName() {
+        return "Pepsico";
+    }
 	
-	public String fullName (String firstName, String lastName) {
-		return firstName + " " + lastName;
-	}
+    public EmployeeResponse getEmployee(int id) {
+        return new EmployeeResponse(id);
+    }
 }

@@ -1,4 +1,12 @@
 type Query {
+	orgId : Int
+	orgName : String
+	employee(id : Long) : employeeResponse
+}
+
+type employeeResponse {
+	id : Long
 	firstName : String
-	fullName(firstName : String, lastName : String) : String
+	lastName : String
+	email : String
 }
