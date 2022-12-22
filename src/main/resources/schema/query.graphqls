@@ -9,5 +9,10 @@ type employeeResponse {
 	firstName : String
 	lastName : String
 	email : String
-	teamName : [String]
+	teamName : [Team]
+}
+
+type Team {
+	teamId : Long
+	teamName : String
 }
