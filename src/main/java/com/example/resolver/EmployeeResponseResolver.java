@@ -4,26 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import com.coxautodev.graphql.tools.GraphQLResolver;
+import com.example.entity.Team;
 import com.example.response.EmployeeResponse;
 
 @Service
 public class EmployeeResponseResolver implements GraphQLResolver<EmployeeResponse> {
 
-    public List<String> getTeamName(EmployeeResponse employeeResponse) {
+    public List<Team> getTeamName(EmployeeResponse employeeResponse) {
         System.out.println("Calling GraphQL Query Resolver");
-        List<String> teamName = new ArrayList<>();
+        List<Team> teamName = new ArrayList<Team>();
 
         switch (String.valueOf(employeeResponse.getId())) {
             case "80992798":
-                teamName.add("DPS");
-                teamName.add("R360");
-                teamName.add("Telemetry");
-                break;
+                teamName.add(new Team(123,"R360"));
+                teamName.add(new Team(456,"Telemetry"));
+            break;
             case "80982074":
-                teamName.add("DPS");
-                teamName.add("R360");
-                teamName.add("Automation");
-                break;
+                teamName.add(new Team(789,"R360"));
+                teamName.add(new Team(012,"Automation"));
+            break;
         }
         return teamName;
     }

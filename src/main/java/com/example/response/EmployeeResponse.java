@@ -4,6 +4,8 @@ package com.example.response;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.entity.Team;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,9 +21,9 @@ public class EmployeeResponse {
 
     private String email;
 
-    private List<String> teamName;
+    private List<Team> teamName;
 
-
+    private Team team;
 
     public EmployeeResponse(int id) {
         switch (id) {
