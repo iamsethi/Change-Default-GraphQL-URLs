@@ -1,7 +1,7 @@
 type Query {
 	orgId : Int
 	orgName : String
-	employee(id : Long) : employeeResponse
+	employee(id : Long!) : employeeResponse
 }
 
 type employeeResponse {
