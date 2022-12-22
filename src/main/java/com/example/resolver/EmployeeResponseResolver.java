@@ -14,6 +14,7 @@ public class EmployeeResponseResolver implements GraphQLResolver<EmployeeRespons
     public List<Team> getTeamName(EmployeeResponse employeeResponse, TeamNameFilter teamNameFilter) {
         System.out.println("Calling GraphQL Query Resolver");
         List<Team> teamName = new ArrayList<Team>();
+        List<Team> filteredTeamName = new ArrayList<Team>();
 
         switch (String.valueOf(employeeResponse.getId())) {
             case "80992798":
@@ -25,12 +26,16 @@ public class EmployeeResponseResolver implements GraphQLResolver<EmployeeRespons
                 teamName.add(new Team(012,"Automation"));
             break;
         }
-        for(Team team : employeeResponse.getTeamName()){
-            if(teamNameFilter.name().equalsIgnoreCase(team.getTeamName().toString())){
-                return null;
+        for(Team team : teamName){
+            if(teamNameFilter != null && teamNameFilter.name().equalsIgnoreCase(team.getTeamName().toString())){
+                filteredTeamName.add(new Team(team.getTeamId(),team.getTeamName()));
+                return filteredTeamName;
             }
+            else return teamName;
+         
         }
-        return teamName;
+        return filteredTeamName;
+       
     }
 
 
