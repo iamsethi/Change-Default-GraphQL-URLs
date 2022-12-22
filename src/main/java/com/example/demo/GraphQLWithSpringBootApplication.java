@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"com.example.query"})
+@ComponentScan({"com.example.query","com.example.resolver"})
 public class GraphQLWithSpringBootApplication {
 
 	public static void main(String[] args) {
