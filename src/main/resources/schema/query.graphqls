@@ -9,10 +9,15 @@ type employeeResponse {
 	firstName : String
 	lastName : String
 	email : String
-	teamName : [Team]
+	teamName(teamNameFilter : teamNameFilter) : [Team]
 }
 
 type Team {
 	teamId : Long
 	teamName : String
+}
+
+enum teamNameFilter {
+	R360,
+	Telemetry
 }
