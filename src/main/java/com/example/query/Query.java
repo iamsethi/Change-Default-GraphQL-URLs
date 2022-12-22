@@ -1,7 +1,6 @@
 package com.example.query;
 
 import org.springframework.stereotype.Component;
-import com.example.response.EmployeeResponse;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 
 @Component
@@ -15,7 +14,4 @@ public class Query implements GraphQLQueryResolver {
         return "Pepsico";
     }
 	
-    public EmployeeResponse getEmployee(int id) {
-        return new EmployeeResponse(id);
-    }
 }
