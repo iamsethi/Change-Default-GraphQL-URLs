@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 
 @Component
-public class Query implements GraphQLQueryResolver {
+public class Org implements GraphQLQueryResolver {
 
     public Integer orgId() {
         return 18892798;
