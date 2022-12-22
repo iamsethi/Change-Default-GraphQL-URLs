@@ -35,6 +35,7 @@ public class EmployeeResponse {
                 this.firstName = "Ketan";
                 this.lastName = "Sethi";
                 this.email = "ketan.sethi@pepsico.com";
+                System.out.println("--------Getting from DB--------");
                 teamName.add(new Team(123,"R360"));
                 teamName.add(new Team(456,"Telemetry"));
                 break;
@@ -43,6 +44,7 @@ public class EmployeeResponse {
                 this.firstName = "Aditya";
                 this.lastName = "Jain";
                 this.email = "aditya.jain@pepsico.com";
+                System.out.println("--------Getting from DB--------");
                 teamName.add(new Team(789,"R360"));
                 teamName.add(new Team(012,"Automation"));
                 break;
